@@ -1,12 +1,7 @@
-# TrailBlazer OS 0.2 — Bill AI Edition
+# TrailBlazer OS 0.3 — Bill Voice Interface
 
-A mobile-first, standalone HTML prototype. Upload `index.html` to the `handheld/` directory in your GitHub Pages repository, replacing only `handheld/index.html`. Do not replace the repository-root `index.html`.
+Upload `index.html` and `sw.js` into the `handheld/` directory of the `jones48/trailblazer.os` GitHub repository, replacing `index.html` and adding `sw.js` if absent. Leave the repository root unchanged. Wait for GitHub Pages to deploy and open https://jones48.github.io/trailblazer.os/handheld/?v=3 in Safari.
 
-## Features
-- Local text commands for camera capture, photo selection, files, time, date, and The Lab placeholder.
-- Browser speech recognition where supported (may be unavailable in iPhone Safari / installed web apps).
-- Spoken responses where browser speech synthesis is supported.
-- No backend, API keys, uploads, persistent storage, or actual conversational AI yet.
-- No always-listening wake word; iOS permissions and browser limitations apply.
+Features: animated orb, browser speech recognition when supported, text command fallback, spoken replies via browser speech synthesis, camera/photo/file pickers, basic arithmetic, local project notes saved in browser localStorage, and page caching for offline reopening after initial successful load. Camera and photos use browser file selection, not unrestricted access to native apps. Offline AI model is NOT integrated: MLC Chat remains a separate app. Speech recognition on Safari may be unsupported or require internet, even when this page is cached. Test offline functionality after loading once online.
 
-Use Safari → Share → Add to Home Screen after deployment. This is a web app running on iOS, not a replacement OS.
+Do not put API keys or sensitive project secrets into public GitHub files.
