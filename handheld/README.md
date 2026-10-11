@@ -1,24 +1,12 @@
-# TrailBlazer OS — Handheld X1 v0.1
+# TrailBlazer OS 0.2 — Bill AI Edition
 
-This is a touch-first UI prototype, **not** a bootable OS image.
+A mobile-first, standalone HTML prototype. Upload `index.html` to the `handheld/` directory in your GitHub Pages repository, replacing only `handheld/index.html`. Do not replace the repository-root `index.html`.
 
-## Test on HP Windows laptop
-1. Extract the ZIP.
-2. Open `index.html` in Chrome or Edge. No installs or server required for basic UI.
-3. Test six tiles. Camera/Media/Files use the browser file picker. Sharing depends on browser support.
+## Features
+- Local text commands for camera capture, photo selection, files, time, date, and The Lab placeholder.
+- Browser speech recognition where supported (may be unavailable in iPhone Safari / installed web apps).
+- Spoken responses where browser speech synthesis is supported.
+- No backend, API keys, uploads, persistent storage, or actual conversational AI yet.
+- No always-listening wake word; iOS permissions and browser limitations apply.
 
-## Publish to GitHub Pages
-1. Create a `handheld-v01` folder in your GitHub Pages repository.
-2. Upload `index.html` and `manifest.webmanifest` into it.
-3. Visit `https://YOURNAME.github.io/YOURREPO/handheld-v01/` (adjust for your Pages URL).
-4. On iPhone, use Safari > Share > Add to Home Screen. Do not use Guided Access until testing camera and sharing.
-
-## Next Linux milestone
-Run the same UI in Chromium kiosk mode on Raspberry Pi OS. Add a Python local API only after the interface is validated; bind to localhost, and do not expose unrestricted system commands.
-
-## Known limitations
-- No native OS replacement, automatic boot or device lock in this package.
-- Camera capture is browser-dependent.
-- File selections are not saved or uploaded.
-- Bill AI and printer status are placeholders.
-- Requires HTTPS for best iPhone PWA behavior.
+Use Safari → Share → Add to Home Screen after deployment. This is a web app running on iOS, not a replacement OS.
