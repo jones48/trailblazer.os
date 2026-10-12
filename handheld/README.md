@@ -1,21 +1,20 @@
-# TrailBlazer OS 0.4 — Bill Chat Edition
+# Bill AI 0.5 — Local Brain Test
 
-## Install to existing GitHub Pages site
+Experimental browser-based LLM test, **separate from Bill 0.4**.
 
-In `jones48/trailblazer.os`, open the `handheld/` directory and upload these three files: `index.html`, `sw.js`, and `manifest.webmanifest`. Replace the existing files of the same names **inside handheld only**. Do not upload to repository root.
+## Install on GitHub (mobile)
 
-After GitHub Pages deploys, open https://jones48.github.io/trailblazer.os/handheld/?v=4 in Safari. If the installed Home Screen app shows an old version, close/reopen it or remove and re-add it after verifying the website has updated.
+1. In `jones48/trailblazer.os`, open the `handheld` directory.
+2. Create a new folder `ai-test` by uploading these files at `handheld/ai-test/index.html` and `handheld/ai-test/worker.js` (GitHub web UI may require creating the folder via **Add file → Create new file** first, typing `ai-test/.gitkeep`, then committing; alternatively upload with a desktop browser).
+3. Open `https://jones48.github.io/trailblazer.os/handheld/ai-test/` after Pages deploys.
+4. Tap **Download & start Bill**. First download requires internet.
 
-## What works
+Do **not** overwrite any file directly in `handheld/` or the repository root.
 
-- Conversation UI with message history stored in this device's browser localStorage
-- Time, date, simple arithmetic, project notes, and guided prompts
-- Export chat as TXT and clear chat
-- Service worker caches the shell for offline opening after first successful load
+## Technical notes
 
-## Limitations
-
-- This is **not yet a generative AI**. It returns limited local command responses.
-- MLC Chat's downloaded model is sandboxed in its own app and is **not connected** to this web page.
-- No cloud sync; project notes and history remain in this device/browser storage and may be erased by iOS storage cleanup.
-- No microphone interface in this chat-first release. Native on-device Apple Foundation Models access requires a native app.
+- Uses Transformers.js 3.8.1 in a module Web Worker and ONNX Community Qwen3-0.6B model with WebGPU and q4 weights.
+- This model/pipeline pairing is experimental and **not verified on the user's device**. CDN/model revision availability and iOS memory limits can prevent loading. Test and inspect status messages before relying on it.
+- The test does not request a paid API key or send prompts to a remote inference API. Browser fetches model files from the CDN/model repository.
+- Browser caching/offline availability depends on browser storage policy; there is no service worker in this isolated test.
+- Model-generated engineering facts may be wrong; verify measurements and safety-critical instructions.
